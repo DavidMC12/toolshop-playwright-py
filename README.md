@@ -21,6 +21,7 @@ pages/             page objects, one class per page or shared component
                    (HomePage, ProductPage, LoginPage, CheckoutPage, Header)
 tests/             tests: products, login, cart, checkout
 pytest.ini         base URL, browsers, trace on failure
+ruff.toml          formatter and linter settings
 ```
 
 - **Page Object Model:** locators and actions live in `pages/`, and the tests only describe the scenario and make the assertions. `pages/__init__.py` exports every page object, so a test imports them with `from pages import LoginPage`.
@@ -54,6 +55,16 @@ pytest -x                        # stop at the first failure
 ```
 
 A trace is recorded for every failed test. Open it with `playwright show-trace test-results/<test-folder>/trace.zip`.
+
+## Formatting and linting
+
+The code is formatted and checked with [Ruff](https://docs.astral.sh/ruff/). The settings are in `ruff.toml`.
+
+```bash
+pip install -r requirements-dev.txt
+ruff format .                    # format the code
+ruff check .                     # lint (add --fix to apply the safe fixes)
+```
 
 ## Things worth knowing
 

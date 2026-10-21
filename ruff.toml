@@ -1,0 +1,6 @@
+# Formatter and linter. Run: ruff format . && ruff check .
+line-length = 88
+
+[lint]
+# E: pycodestyle errors, F: pyflakes, I: import sorting
+select = ["E", "F", "I"]

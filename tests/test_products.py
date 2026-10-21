@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect
-from pages.home_page import HomePage
+from pages import HomePage
 
 
 def test_shows_products_on_main_page(page: Page):

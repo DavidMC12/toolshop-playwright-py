@@ -1,7 +1,5 @@
 from playwright.sync_api import Page, expect
-from pages.header import Header
-from pages.home_page import HomePage
-from pages.product_page import ProductPage
+from pages import Header, HomePage, ProductPage
 
 
 def test_add_a_product_to_the_cart(page: Page):

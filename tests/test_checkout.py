@@ -1,10 +1,14 @@
 from playwright.sync_api import Page, expect
 from data.customer import customer
-from pages.checkout_page import BankTransferDetails, BillingAddress, CheckoutPage
-from pages.header import Header
-from pages.home_page import HomePage
-from pages.login_page import LoginPage
-from pages.product_page import ProductPage
+from pages import (
+    BankTransferDetails,
+    BillingAddress,
+    CheckoutPage,
+    Header,
+    HomePage,
+    LoginPage,
+    ProductPage,
+)
 
 
 def test_complete_a_purchase(page: Page):

@@ -1,4 +1,5 @@
 from playwright.sync_api import Page, expect
+
 from data.customer import customer
 from pages import (
     BankTransferDetails,
@@ -30,9 +31,7 @@ def test_complete_a_purchase(page: Page):
     home_page.goto()
     home_page.open_product(product_name)
     product_page.add_to_cart()
-    expect(page.get_by_role("alert")).to_contain_text(
-        "Product added to shopping cart"
-    )
+    expect(page.get_by_role("alert")).to_contain_text("Product added to shopping cart")
     expect(header.cart_link()).to_have_text("1")
 
     # Step 3: go to the checkout.
